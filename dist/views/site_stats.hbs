@@ -128,7 +128,6 @@
 <script type="text/javascript">
     google.charts.load('current', {'packages':['corechart']});
     google.charts.load("current", {'packages':["calendar"]});
-    google.charts.setOnLoadCallback(drawChart);
 
     let data = [];
     let GetCalendarData = function () {
@@ -144,7 +143,6 @@
             }
         });
     };
-    GetCalendarData();
     function drawChart() {
 
         let dataTable = new google.visualization.DataTable();
@@ -162,6 +160,11 @@
         calendar.draw(dataTable, calendar_options);
 
     }
+    //Fill data
+    GetCalendarData();
+    //Draw them
+    google.charts.setOnLoadCallback(drawChart);
+
 </script>
 <!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
 <!--<script type="text/javascript">-->
