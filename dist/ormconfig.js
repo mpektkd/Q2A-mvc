@@ -14,12 +14,6 @@ const connectionOptions = {
     },
     logging: true,
     synchronize: false,
-    ssl: true,
-    extra: {
-        ssl: {
-            rejectUnauthorized: false,
-        },
-    },
 };
 module.exports = connectionOptions;
 //# sourceMappingURL=ormconfig.js.map
