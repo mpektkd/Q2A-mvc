@@ -21,10 +21,8 @@
     <div class="d-flex flex-column" id="content-wrapper">
         <div id="content">
             <div class="container-fluid">
-                <h3 class="text-dark mb-4">Profile</h3>
                 <div class="row mb-3">
                     <div class="col-lg-4">
-
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
                                 <h6 class="text-primary fw-bold m-0">Top 10 Famous Keywords</h6>
@@ -132,7 +130,7 @@
     google.charts.load("current", {'packages':["calendar"]});
     google.charts.setOnLoadCallback(drawChart);
 
-    let data;
+    let data = [];
     let GetCalendarData = function () {
         $.ajax({
             url: '../question/charts',
@@ -140,7 +138,9 @@
             dataType: 'json',
             success: function (res) {
                 console.log(res);
-                data=res;
+                $.each(res, function(key, value){
+                    data.push(value);
+                });
             }
         });
     };
@@ -152,7 +152,7 @@
         dataTable.addColumn({ type: 'number', id: 'Won/Loss' });
         data.map(x => dataTable.addRow([new Date(x.datepost), parseInt(x.relatedthreads, 10)]));
 
-        let calendar_options = {title:'Barchart: How Much Pizza I Ate Last Night',
+        let calendar_options = {
             width:600,
             height:400,
             legend: 'none'
