@@ -7,12 +7,6 @@ const connectionOptions = {
     username: 'vtzrffjbqxcrmn',
     password: 'cc967ef9547db0b4febd78f33a581f2c122728495c536df1ebccceb19a5d7a4d',
     database: 'd9hn101fd53u27',
-    "ssl": true,
-    "extra": {
-        "ssl": {
-            "rejectUnauthorized": false
-        }
-    }
     entities: ['dist/**/*.entity{.ts,.js}'],
     migrations: ['dist/migration/*{.ts,.js}'],
     cli: {
@@ -20,6 +14,12 @@ const connectionOptions = {
     },
     logging: true,
     synchronize: false,
+    ssl: true,
+    extra: {
+        ssl: {
+            rejectUnauthorized: false,
+        },
+    },
 };
 module.exports = connectionOptions;
 //# sourceMappingURL=ormconfig.js.map
