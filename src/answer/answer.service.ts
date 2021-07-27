@@ -56,7 +56,7 @@ export class AnswerService {
     }
 
     const thread = await this.manager.findOne(Thread, thid, {
-      relations: ['users', 'createdByUser', 'answers', 'question'],
+      relations: ['users', 'createdByUser', 'answers', 'question', 'keywords'],
     });
 
     console.log(thread);

@@ -58,7 +58,7 @@ let AnswerService = class AnswerService {
             thid = question.thread.id;
         }
         const thread = await this.manager.findOne(thread_entity_1.Thread, thid, {
-            relations: ['users', 'createdByUser', 'answers', 'question'],
+            relations: ['users', 'createdByUser', 'answers', 'question', 'keywords'],
         });
         console.log(thread);
         if (!thread)

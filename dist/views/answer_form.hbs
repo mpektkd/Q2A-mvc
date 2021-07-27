@@ -64,11 +64,22 @@
                                                             </div>
                                                         </div>
                                                         <div class="row">
-                                                            <div class="col d-flex justify-content-end">
-                                                                <div class="d-inline-block">
-                                                                    <p class="text-primary m-0 fst-italic float-right"><span>{{ formatdate res.dateCreated "MMM Do YY" }}</span></p>
+                                                            <div class="col-4"></div>
+                                                            <div class="col-4">
+                                                                {{#each res.keywords}}
+                                                                    <button type="button" class="btn btn-info" disabled>
+                                                                        {{this.name}}
+                                                                    </button>
+                                                                {{/each}}
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <div class="col d-flex justify-content-end">
+                                                                    <div class="d-inline-block">
+                                                                        <p class="text-primary m-0 fst-italic"><span>{{formatdate res.question.dateCreated}}</span></p>
+                                                                    </div>
+                                                                    <input type="hidden" value="{{ res.question.id }}">
+                                                                    <img alt="Avatar" class="avatar rounded-circle mb-3 mt-4">
                                                                 </div>
-                                                                <img id="avatar" alt="Avatar" class="rounded-circle mb-3 mt-4">
                                                             </div>
                                                         </div>
                                                     </div>
